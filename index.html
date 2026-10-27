@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora Pink | Tiệm Hoa Tươi Sang Trọng & Dễ Thương</title>
+    <!-- Google Fonts cho kiểu chữ sang trọng và dễ thương -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink-bg: #fff0f5;       /* LavenderBlush - Hồng phấn nhẹ */
+            --pink-card: #ffffff;     /* Trắng sạch cho thẻ */
+            --pink-main: #ff8da1;     /* Hồng tươi dễ thương */
+            --pink-dark: #d87093;     /* PaleVioletRed - Hồng đậm sang trọng */
+            --gold-accent: #d4af37;   /* Vàng ánh kim cao cấp */
+            --text-main: #4a3b40;     /* Nâu sẫm mềm mại thay cho đen */
+            --text-muted: #8c7a80;
+            --shadow-soft: 0 10px 30px rgba(216, 112, 147, 0.12);
+            --shadow-hover: 0 15px 35px rgba(216, 112, 147, 0.22);
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--pink-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* HEADER & MENU */
+        header {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #ffe4e1;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .brand-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--pink-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-logo span {
+            color: var(--gold-accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--pink-dark);
+        }
+
+        /* HERO SECTION - GIỚI THIỆU TRANG CHỦ */
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, #ffffff 0%, var(--pink-bg) 100%);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            color: var(--gold-accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--pink-dark);
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--pink-dark);
+            color: white;
+            padding: 0.9rem 2.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(216, 112, 147, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--pink-main);
+            transform: translateY(-2px);
+        }
+
+        /* MAIN CONTAINER & TITLES */
+        .container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--pink-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+        }
+
+        /* PRODUCT GRID */
+        .flower-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* FLOWER CARD */
+        .flower-card {
+            background-color: var(--pink-card);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 228, 225, 0.6);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flower-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .flower-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+        }
+
+        .flower-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .flower-card:hover .flower-img {
+            transform: scale(1.08);
+        }
+
+        .badge-species {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--pink-dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            backdrop-filter: blur(5px);
+        }
+
+        .flower-info {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .flower-name {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+        }
+
+        .flower-latin {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* CHI TIẾT MOI TRƯỜNG SINH TRƯỞNG */
+        .environment-box {
+            background-color: #fff9fa;
+            border-left: 3px solid var(--pink-main);
+            padding: 0.8rem 1rem;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 1.2rem;
+            font-size: 0.88rem;
+        }
+
+        .env-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+            color: #5a4b50;
+        }
+
+        .env-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px dashed #ffe4e1;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--pink-dark);
+        }
+
+        .btn-add {
+            background-color: var(--pink-bg);
+            color: var(--pink-dark);
+            border: 1px solid var(--pink-dark);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-add:hover {
+            background-color: var(--pink-dark);
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #fce4ec;
+            color: var(--text-main);
+            text-align: center;
+            padding: 3rem 1.5rem;
+            margin-top: 5rem;
+            border-top: 1px solid #ffd1dc;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU ĐIỀU HƯỚNG -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="brand-logo">Flora <span>Pink 🌸</span></a>
+            <ul class="nav-menu">
+                <li><a href="#home">Trang Chủ</a></li>
+                <li><a href="#products">Sản Phẩm Hoa</a></li>
+                <li><a href="#environment">Môi Trường Sinh Trưởng</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- TRANG CHỦ GIỚI THIỆU (HERO) -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="hero-subtitle">Vẻ Đẹp Tinh Tế & Thanh Lịch</p>
+            <h1>Thế Giới Hoa Tươi Ngọt Ngào & Sang Trọng</h1>
+            <p>Khám phá bộ sưu tập các loài hoa cao cấp được nuôi trồng trong điều kiện tối ưu, mang sắc hồng dịu dàng tô điểm cho không gian sống của bạn.</p>
+            <a href="#products" class="btn-primary">Khám Phá Ngay</a>
+        </div>
+    </section>
+
+    <!-- DANH SÁCH SẢN PHẨM HOA -->
+    <main class="container" id="products">
+        <div class="section-header">
+            <h2>Các Loài Hoa Nổi Bật</h2>
+            <p>Thông tin chi tiết về giống loài và môi trường sinh trưởng tốt nhất</p>
+        </div>
+
+        <div class="flower-grid">
+            
+            <!-- HOA 1: HOA HỒNG PEONY -->
+            <article class="flower-card">
+                <div class="flower-img-wrapper">
+                    <span class="badge-species">Giống: Rosa Hybrid</span>
+                    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=800&auto=format&fit=crop" alt="Hoa Hồng Peony" class="flower-img">
+                </div>
+                <div class="flower-info">
+                    <h3 class="flower-name">Hoa Hồng Peony Pink</h3>
+                    <p class="flower-latin">Thương hiệu: Juliette Pink Rose</p>
+                    
+                    <!-- Môi trường sinh trưởng -->
+                    <div class="environment-box" id="environment">
+                        <div class="env-item">☀️ <b>Ánh sáng:</b> Nắng trực tiếp (6-8h/ngày)</div>
+                        <div class="env-item">🌡️ <b>Nhiệt độ:</b> 18°C - 28°C</div>
+                        <div class="env-item">🌱 <b>Môi trường:</b> Sân vườn, ban công thoáng gió</div>
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">450.000 đ</span>
+                        <button class="btn-add">Chọn Mua</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- HOA 2: HOA CẨM TÚ CẦU -->
+            <article class="flower-card">
+                <div class="flower-img-wrapper">
+                    <span class="badge-species">Giống: Hydrangea macrophylla</span>
+                    <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?q=80&w=800&auto=format&fit=crop" alt="Hoa Cẩm Tú Cầu" class="flower-img">
+                </div>
+                <div class="flower-info">
+                    <h3 class="flower-name">Cẩm Tú Cầu Hồng Phấn</h3>
+                    <p class="flower-latin">Xuất xứ: Đà Lạt / Nhật Bản</p>
+                    
+                    <!-- Môi trường sinh trưởng -->
+                    <div class="environment-box">
+                        <div class="env-item">🌤️ <b>Ánh sáng:</b> Bán râm, ánh nắng dịu</div>
+                        <div class="env-item">💧 <b>Độ ẩm:</b> Cần ẩm nhiều, tưới hàng ngày</div>
+                        <div class="env-item">🌱 <b>Môi trường:</b> Mát mẻ, trong nhà gần cửa sổ</div>
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">380.000 đ</span>
+                        <button class="btn-add">Chọn Mua</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- HOA 3: HOA TULIP HỒNG -->
+            <article class="flower-card">
+                <div class="flower-img-wrapper">
+                    <span class="badge-species">Giống: Tulipa Gesneriana</span>
+                    <img src="https://images.unsplash.com/photo-1520763185298-1b434c919102?q=80&w=800&auto=format&fit=crop" alt="Hoa Tulip Hồng" class="flower-img">
+                </div>
+                <div class="flower-info">
+                    <h3 class="flower-name">Tulip Hà Lan Pastel</h3>
+                    <p class="flower-latin">Dòng hoa: Royal Dutch Tulip</p>
+                    
+                    <!-- Môi trường sinh trưởng -->
+                    <div class="environment-box">
+                        <div class="env-item">❄️ <b>Nhiệt độ:</b> Xứ lạnh (15°C - 22°C)</div>
+                        <div class="env-item">☀️ <b>Ánh sáng:</b> Ánh sáng tán xạ nhẹ</div>
+                        <div class="env-item">🌱 <b>Môi trường:</b> Phòng máy lạnh, không gian kín</div>
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">520.000 đ</span>
+                        <button class="btn-add">Chọn Mua</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <h2 style="font-family: 'Playfair Display', serif; color: #d87093; margin-bottom: 0.5rem;">Flora Pink Boutique</h2>
+        <p>Địa chỉ: 123 Đường Hoa Hồng, Phường Bến Nghé, Quận 1, TP.HCM</p>
+        <p style="margin-top: 1rem;">&copy; 2026 Flora Pink. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+</body>
+</html>
